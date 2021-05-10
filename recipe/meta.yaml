@@ -1,5 +1,5 @@
 {% set name = "tensortrade" %}
-{% set version = "1.0.1b0" %}
+{% set version = "1.0.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 11cab64ce2da9989e6513f8fee75219df626d21cff8ee7d33b21f2d23a9be6d7
+  sha256: a427e17116f50a7208f6cee5094243fe5b9b809f2c27358776ebb1e7c93840c3
 
 build:
   number: 0
@@ -36,10 +36,8 @@ test:
     - tensortrade
     - tensortrade.agents
   commands:
-    - pip check
     - pytest
   requires:
-    - pip
     - pytest >=5.1.1
     - ta >=0.4.7
   source_files:
@@ -49,10 +47,10 @@ about:
   home: https://www.tensortrade.org
   summary: 'TensorTrade: A reinforcement learning library for training, evaluating, and deploying robust trading agents.'
   description: |
-   TensorTrade is an open source Python framework for building, training, evaluating, and deploying robust trading
-   algorithms using reinforcement learning. The framework focuses on being highly composable and extensible, to
-   allow the system to scale from simple trading strategies on a single CPU, to complex investment
-   strategies run on a distribution of HPC machines.
+    TensorTrade is an open source Python framework for building, training, evaluating, and deploying robust trading
+    algorithms using reinforcement learning. The framework focuses on being highly composable and extensible, to
+    allow the system to scale from simple trading strategies on a single CPU, to complex investment
+    strategies run on a distribution of HPC machines.
   license: Apache-2.0
   license_file: LICENSE
   dev_url: https://github.com/tensortrade-org/tensortrade
