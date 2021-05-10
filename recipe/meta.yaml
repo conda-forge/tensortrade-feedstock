@@ -36,10 +36,8 @@ test:
     - tensortrade
     - tensortrade.agents
   commands:
-    - pip check
     - pytest
   requires:
-    - pip
     - pytest >=5.1.1
     - ta >=0.4.7
   source_files:
