@@ -1,5 +1,5 @@
 {% set name = "tensortrade" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a427e17116f50a7208f6cee5094243fe5b9b809f2c27358776ebb1e7c93840c3
+  sha256: 39c21afa66c63acfa303aba6e13874f1747b1ca8a25f28d9f0a8d34c6fd5d346
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
