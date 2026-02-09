@@ -1,5 +1,6 @@
 {% set name = "tensortrade" %}
 {% set version = "1.0.4" %}
+{% set python_min = "3.12" %}
 
 
 package:
@@ -21,16 +22,19 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
-    - gym >=0.14.0
+    - gymnasium >=0.28.1
     - ipython >=7.12.0
     - matplotlib-base >=3.1.1
-    - numpy >=1.17.0
-    - pandas >=0.25.0
+    - numpy >=1.26.4
+    - pandas 2.2.3,<3.0
     - plotly >=4.5.0
     - python >={{ python_min }}
     - pyyaml >=5.1.2
     - stochastic >=0.6.0
-    - tensorflow >=2.1.0
+    - tensorflow >=2.15.1
+    - deprecated >=1.2.13
+    - ta >=0.4.7
+    - pytest >=7.0.0
 
 test:
   imports:
