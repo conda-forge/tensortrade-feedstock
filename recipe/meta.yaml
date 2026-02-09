@@ -1,5 +1,6 @@
 {% set name = "tensortrade" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
+{% set python_min = "3.12" %}
 
 
 package:
@@ -8,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a427e17116f50a7208f6cee5094243fe5b9b809f2c27358776ebb1e7c93840c3
+  sha256: 39c21afa66c63acfa303aba6e13874f1747b1ca8a25f28d9f0a8d34c6fd5d346
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,30 +20,30 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
-    - gym >=0.14.0
+    - gymnasium >=0.28.1
     - ipython >=7.12.0
     - matplotlib-base >=3.1.1
-    - numpy >=1.17.0
-    - pandas >=0.25.0
+    - numpy >=1.26.4
+    - pandas 2.2.3,<3.0
     - plotly >=4.5.0
     - python >={{ python_min }}
     - pyyaml >=5.1.2
     - stochastic >=0.6.0
-    - tensorflow >=2.1.0
+    - tensorflow >=2.15.1
+    - deprecated >=1.2.13
+    - ta >=0.4.7
+    - pytest >=7.0.0
 
 test:
   imports:
     - tensortrade
-    - tensortrade.agents
   commands:
-    - pytest
+    - pip check
   requires:
-    - pytest >=5.1.1
-    - ta >=0.4.7
+    - pip
     - python {{ python_min }}
-  source_files:
-    - tests
 
 about:
   home: https://www.tensortrade.org
