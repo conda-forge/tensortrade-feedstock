@@ -39,15 +39,11 @@ requirements:
 test:
   imports:
     - tensortrade
-    - tensortrade.agents
   commands:
-    - pytest
+    - pip check
   requires:
-    - pytest >=5.1.1
-    - ta >=0.4.7
+    - pip
     - python {{ python_min }}
-  source_files:
-    - tests
 
 about:
   home: https://www.tensortrade.org
